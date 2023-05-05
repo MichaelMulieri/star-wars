@@ -15,7 +15,14 @@ const PlanetComponent = (props) => {
       })
       .catch((err) => {
         console.log(err);
-        setData({ error: "These are not the droids you are looking for" });
+        setData({
+          error: (
+            <img
+              alt="obi-wan kenobi"
+              src={require("../pictures/obiwan.webp")}
+            />
+          ),
+        });
       });
   }, [id]);
 

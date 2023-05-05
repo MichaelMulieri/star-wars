@@ -15,7 +15,14 @@ const PeopleComponent = () => {
       })
       .catch((err) => {
         console.log(err);
-        setData({ error: "These are not the droids you are looking for" });
+        setData({
+          error: (
+            <img
+              alt="obi-wan kenobi"
+              src={require("../pictures/obiwan.webp")}
+            />
+          ),
+        });
       });
   }, [id]);
 
@@ -23,7 +30,7 @@ const PeopleComponent = () => {
     <h1>{data.error}</h1>
   ) : (
     <div>
-      <h1>Planet: {data.name}</h1>
+      <h1>Name: {data.name}</h1>
       <p>
         Height: {data.height}
         <br />
